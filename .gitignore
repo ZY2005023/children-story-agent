@@ -1,0 +1,52 @@
+# =====================================================================
+# .gitignore —— 告诉 Git 哪些文件不要提交
+# =====================================================================
+
+# 【最重要的一条】.env 里有 API 密钥和数据库密码，绝对不能提交！
+.env
+
+# Python 编译缓存
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# 数据目录（素材文件和向量索引体积大，且可重建）
+data/story_materials/*
+data/faiss_index/*
+!data/story_materials/.gitkeep
+!data/faiss_index/.gitkeep
+
+# 本地 Embedding 模型（约 90MB，体积大；换机器时按 .env 说明重新下载或改回在线模型名）
+models/
+
+# 工具 / 运行缓存
+.cache/
+.slidep/
+.workbuddy/
+
+# 打赏/打包产物
+build/
+dist/
+*.egg-info/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Office 临时锁文件（Word/WPS/Excel 打开时会生成 ~$ 开头的文件）
+~$*
+*.tmp
+
+# 日志
+*.log
